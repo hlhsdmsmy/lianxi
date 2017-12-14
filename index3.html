@@ -102,6 +102,7 @@
 <script>
 	window.onload = function(){
 		let table = document.querySelector('tbody');
+		let btn = document.querySelector('.tianjia');
 		table.ondblclick =function(e){
 			let element = e.target;
 			if(element.nodeName == 'TD' && element.className != 'del'){
@@ -121,6 +122,18 @@
 				let trs = element.parentNode.parentNode;
 				table.removeChild(trs);
 			}
+		}
+	btn.onclick = function(){
+			table.innerHTML = table.innerHTML + `
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td class="del"><button class="del_btn">删除</button></td>
+			</tr>
+			`;
 		}
 	}
 </script>
